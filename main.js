@@ -12,6 +12,8 @@ function addList() {
   const span = document.createElement("span");
   const deleteBtn = document.createElement("button");
 
+  deleteBtn.setAttribute("class", "delete");
+
   li.appendChild(span);
   li.appendChild(deleteBtn);
 
@@ -21,8 +23,8 @@ function addList() {
   // リストの子に追加
   ul.appendChild(li);
 
-  deleteBtn.addEventListener("click", (e) => {
-    e.target.parentElement.remove();
+  deleteBtn.addEventListener("click", () => {
+    li.remove();
   });
 
   input.focus();
